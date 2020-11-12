@@ -35,7 +35,7 @@ wsgi.py、asgi.py —— WSGI部署、ASGI部署
 
 # 四、项目启动
 
-启动方式一:
+###启动方式一:
 
 启动命令
 ```
@@ -43,7 +43,7 @@ python manage.py runserver 127.0.0.1:8000
 ```
 参考示例代码：访问 localhost:8000/hello
 
-启动方式二:
+###启动方式二:
 
 IDE中右键manage.py, 选择```Edis ‘manage’...```
 
@@ -53,7 +53,11 @@ IDE中右键manage.py, 选择```Edis ‘manage’...```
 
 # 五、ORM操作
 
+######数据库连接:
+
 1.修改setting的‘DATABASES’
+
+######建立数据模型:
 
 2.创建user模型，执行命令 ```python manage.py startapp user```。执行完当前目录会增加一个user文件夹
 
@@ -65,4 +69,6 @@ python manage.py makemigrations user
 python manage.py migrate
 ```
 
-5./user/views ，orm常规操作
+######执行sql操作:
+
+5.orm常规操作，参考user/views.py
