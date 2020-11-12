@@ -41,7 +41,7 @@ wsgi.py、asgi.py —— WSGI部署、ASGI部署
 ```
 python manage.py runserver 127.0.0.1:8000
 ```
-参考示例代码：访问 localhost:8000/hello
+
 
 ### 启动方式二:
 
@@ -50,6 +50,9 @@ IDE中右键manage.py, 选择```Edis ‘manage’...```
 弹出框中 Parameters项填上 ```runserver 127.0.0.1:8000```
 
 保存后，可选择运行或debug执行manage启动项目
+
+访问 localhost:8000/hello 显示 ```Hello world !```
+
 
 # 五、ORM操作
 
