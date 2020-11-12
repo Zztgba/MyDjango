@@ -8,7 +8,7 @@ pip3 install django
 
 django-admin startproject my_django
 
-查看project_name目录下结构
+查看my_django目录下结构
 
 ```
 my_django/
