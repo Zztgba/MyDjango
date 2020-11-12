@@ -31,19 +31,25 @@ wsgi.py、asgi.py —— WSGI部署、ASGI部署
 
 # 三、接口开发
 
-
-新建view.py
-
-编写接口代码
-
-urls.py中引入view.py，通过配置path方式设置接口映射
+参考my_django目录下 view.py 与 urls.py
 
 # 四、项目启动
 
+启动方式一:
+
+启动命令
 ```
 python manage.py runserver 127.0.0.1:8000
 ```
 参考示例代码：访问 localhost:8000/hello
+
+启动方式二:
+
+IDE中右键manage.py, 选择```Edis ‘manage’...```
+
+弹出框中 Parameters项填上 ```runserver 127.0.0.1:8000```
+
+保存后，可选择运行或debug执行manage启动项目
 
 # 五、ORM操作
 
