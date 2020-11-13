@@ -18,6 +18,7 @@ from django.urls import path
 
 import my_django.view
 import user.views
+import game.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +27,7 @@ urlpatterns = [
     path('query/', user.views.get),
     path('update/', user.views.update),
     path('delete/', user.views.delete),
+    path('game/insert', game.views.insert_game),
+    path('board/insert', game.views.insert_board),
+    path('game/all', game.views.all_games),
 ]

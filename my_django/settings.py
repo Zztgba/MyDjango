@@ -37,14 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'game.apps.GameConfig',
+    'djorm_pool',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -73,6 +75,14 @@ WSGI_APPLICATION = 'my_django.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+
+DJORM_POOL_OPTION = {
+	'pool_size': 20,   # 本连接池的最大连接个数
+	'max_overflow': 0,
+	'recycle': 3600
+}
+
+DJORM_POOL_PESSIMISTIC = True
 
 DATABASES = {
     'default': {
