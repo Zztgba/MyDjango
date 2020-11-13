@@ -45,8 +45,9 @@ sql_time 服务端sql执行总耗时
 
 结论
 由于Django的ORM对数据库操作结果为QuerySet，在QuerySet查询提交之前，不会发生任何实际数据库操作。
-Django 采用连接池方式能有效提升获取数据库连接的开销
+顾sql_time字段反应的数据为 获取数据库连接+数据库操作 总时间
+Django 采用连接池方式能稍微提升获取数据库连接的开销
 
 相对于SQLAlchemy,
-Django的ORM框架性能较弱，但其模型映射联系更为紧密。并可通过Model反向生成数据库表
+Django的ORM框架效率较低，但其模型映射联系更为紧密，并可通过Model反向生成数据库表。
 """
