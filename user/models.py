@@ -3,13 +3,25 @@ from django.db import models
 # Create your models here.
 from django.db import models
 
-class User(models.Model):
+class UserSplit(models.Model):
 
-	name = models.CharField(max_length=50)
+	__abstract__ = True
 
-	def __repr__(self):
-		return "User:{id:%s, name:%s}" % (self.id, self.name)
+	uid = models.IntegerField()
+	ct = models.IntegerField()
 
 	class Meta:
-		db_table = "user"
-		ordering = ['name']
+		abstract = True
+
+
+def get_model(split):
+	split = split % 3
+
+	class Meta:
+		db_table = 'user_%s' % split
+
+	attrs = {
+		'__module__': UserSplit.__module__,
+		'Meta': Meta
+	}
+	return type(str('User_%s' % split), (UserSplit,), attrs)
