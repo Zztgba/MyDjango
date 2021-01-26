@@ -30,4 +30,5 @@ urlpatterns = [
     path('game/insert', game.views.insert_game),
     path('board/insert', game.views.insert_board),
     path('game/all', game.views.all_games),
+    path('user/add', user.views.split_add_user),
 ]

@@ -81,3 +81,9 @@ def delete(request):
 	user1 = user.models.User.objects.get(name='test1')
 	user1.delete()
 	return HttpResponse("ok")
+
+
+def split_add_user(request):
+	model = user.models.get_model(1)
+	userResult = model.objects.all()
+	return HttpResponse("<p>数据添加成功！</p> %s" % userResult)
